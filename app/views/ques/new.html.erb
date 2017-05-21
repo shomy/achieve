@@ -1,0 +1,27 @@
+<div class="container" id="hoge">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+  <%= notice %>
+  <% if @que.errors.any? %>
+      <h2><%= @que.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% @que.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+  <% end %>
+<%= form_for(@que,url:confirm_ques_path) do |f| %>
+  <%= f.label :名前 %>
+  <%= f.text_field :name ,class:"form-control" %>
+  <br>
+  <%= f.label :メールアドレス %>
+  <%= f.text_field :email,class:"form-control" %>
+  <br>
+  <%= f.label :お問い合わせ内容 %>
+  <%= f.text_field :content,class:"form-control" %>
+  <br>
+  <%= f.submit "上記内容を送信",class:"btn btn-primary"%>
+<% end %>  
+  </div>
+</div>
+

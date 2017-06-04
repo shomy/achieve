@@ -12,14 +12,18 @@ class QuesController < ApplicationController
     render :new if @que.invalid?
   end
 
+
+
   def create
     @que = Que.new(ques_params)
     if @que.save
     redirect_to root_path,notice:"お問い合わせが完了しました！"
+    XoticeMailer.sendmail_que(@que).deliver
     else
     render 'new'
     end
   end
+
 
   private
   def ques_params

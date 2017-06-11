@@ -1,8 +1,6 @@
 <% if user_signed_in? %>
-  <% @poem.each do |poem| %>
-    <h1><%= poem.title %></h1>
-    <%= poem.content %>
-  <% end %>
+    <h1><%= @poem.title %></h1>
+    <p><%= @poem.content %></p>
 <% else %>
    <h1>ログインして下さい</h1>
 <% end %>

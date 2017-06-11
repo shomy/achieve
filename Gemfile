@@ -24,6 +24,8 @@ gem 'faker'
 gem 'rails_admin'
 gem 'cancan'
 gem 'activeresource'
+gem 'omniauth-facebook'
+
 
 group :development do
   gem 'letter_opener_web'

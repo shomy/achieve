@@ -2,7 +2,11 @@ class PoemsController < ApplicationController
   def index
     @poems = Poem.all
   end
+  # def show
+  #   @poem = Poem.find(params[:id])
+  # end
   def show
-    @poems = Poem.all
+    @poem = Poem.find(params[:id])
   end
 end
+

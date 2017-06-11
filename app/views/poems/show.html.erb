@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <% @poems.each do |poem| %>
+  <% @poem.each do |poem| %>
     <h1><%= poem.title %></h1>
     <%= poem.content %>
   <% end %>

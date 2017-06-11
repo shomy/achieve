@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
   <% @poems.each do |poem| %>
-    <%= poem.title %>
-    <%= poem.content %>
+      <p><%= poem.title %></p>
+      <p><%= poem.content %></p>
+      <p><%= link_to "詳細", poem_path(poem.id) %></p>
   <% end %>
-  <%= link_to "詳細", poem_path(current_user) %>
 
 <% else %>
    <h1>ログインして下さい</h1>
-<% end %>
+<% end %> 

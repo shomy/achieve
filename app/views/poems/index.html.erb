@@ -1,5 +1,10 @@
-<% @poems.each do |poem| %>
-  <%= poem.title %>
-  <%= poem.content %>
+<% if user_signed_in? %>
+  <% @poems.each do |poem| %>
+    <%= poem.title %>
+    <%= poem.content %>
+  <% end %>
+  <%= link_to "詳細", poem_path(current_user) %>
+
+<% else %>
+   <h1>ログインして下さい</h1>
 <% end %>
-<%= link_to "詳細", poem_path(current_user) %>

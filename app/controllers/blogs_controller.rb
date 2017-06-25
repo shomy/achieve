@@ -1,11 +1,13 @@
 class BlogsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_blog,only: [:edit,:update,:destroy]
+  before_action :set_blog,only: [:edit,:update,:destroy,:show]
 
   def index
-    @users = User.all
     @blogs = Blog.all
-
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
@@ -16,6 +18,11 @@ class BlogsController < ApplicationController
     end
   end
 
+  def show
+    @comment = @blog.comments.build
+    @comments = @blog.comments
+  end
+
   def confirm
     @blog = Blog.new(blogs_params)
     render :new if @blog.invalid?
@@ -23,7 +30,7 @@ class BlogsController < ApplicationController
 
 
 
- def create
+  def create
     @blog = Blog.new(blogs_params)
     @blog.user_id = current_user.id
     if @blog.save
@@ -33,6 +40,7 @@ class BlogsController < ApplicationController
       render 'new'
     end
   end
+
 
   def edit
   end
@@ -51,6 +59,7 @@ class BlogsController < ApplicationController
   def blogs_params
     params.require(:blog).permit(:title, :content)
   end
+
 
   def set_blog
     @blog = Blog.find(params[:id])

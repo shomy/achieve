@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
 }
 
+
+resources :users, only: [:index,:show]
+
+
 resources :blogs do
   resources :comments
   post :confirm, on: :collection
@@ -24,6 +28,8 @@ end
   end
 
   resources :poems, only: [:index, :show]
+
+  resources :relationships, only: [:create, :destroy]
 
 
   if Rails.env.development?

@@ -1,0 +1,21 @@
+<div class="container fluid">
+      <h3><%= @user.name %></h3>
+<div class="row">フォローしている人</div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <% @follwed.each do |f| %>
+         <%= f.name %>
+         <%= profile_img(f) %>
+      <% end %>
+    </div>
+  </div>
+<div class="row">フォロワー</div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+       <% @followers.each do |f| %>
+       <%= f.name %>
+       <%= profile_img(f) %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@
   <% @notifications.each do |notification| %>
   <hr>
     <li>
-      <span><%= Î´Õi %></span>
+      <span>Î´Õi</span>
       <p>
         ¡¾<%= notification.comment.user.try(:name) %>¤µ¤ó¡¿¤¬
         ¤¢¤Ê¤¿¤Î¥Ö¥í¥°£¨<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>£©¤Ë¥³¥á¥ó¥È¤·¤Þ¤·¤¿¡£

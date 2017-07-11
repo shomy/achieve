@@ -7,6 +7,6 @@ module ApplicationHelper
     else
       img_url = 'no_image.png'
     end
-    image_tag(img_url, alt: user.name)
+    image_tag(img_url, alt: user.name, :class => "menu_icon")
   end
 end

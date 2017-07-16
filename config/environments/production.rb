@@ -1,6 +1,7 @@
 Rails.application.configure do
 
-config.action_mailer.default_url_options = { host: 'zikkendive.herokuapp.com' }
+# config.action_mailer.default_url_options = { host: 'zikkendive.herokuapp.com' }
+config.action_mailer.default_url_options = { host: 'http://52.199.1.245' }
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
 {

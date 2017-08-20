@@ -39,6 +39,7 @@ gem 'therubyracer', platforms: :ruby
 group :development do
   gem 'letter_opener_web'
   gem 'dotenv-rails'
+  gem 'web-console', '~> 2.0'
 end
 
 
@@ -58,5 +59,14 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
+  gem "rspec-rails"
+  gem "factory_girl_rails"
 end
 
+
+group :test do
+  gem "capybara"
+  gem "database_cleaner"
+  gem "launchy"
+  gem "selenium-webdriver"
+end

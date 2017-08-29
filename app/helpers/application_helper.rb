@@ -10,3 +10,4 @@ module ApplicationHelper
     image_tag(img_url, alt: user.name, class: "menu_icon")
   end
 end
+
